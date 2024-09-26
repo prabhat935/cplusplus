@@ -6,7 +6,7 @@ class Test{
 public:
     Test(int a = 0):x{a}{}
     friend istream& operator>>(istream& input , Test& obj);
-    friend ostream& operator<<(ostream& output , Test& obj);
+    friend ostream& operator<<(ostream& output , const Test& obj);
 };
 
 istream& operator>>(istream& input , Test& obj){
@@ -14,7 +14,7 @@ istream& operator>>(istream& input , Test& obj){
     return input;
 }
 
-ostream& operator<<(ostream& output , Test& obj){
+ostream& operator<<(ostream& output , const Test& obj){
     output << obj.x << endl;
     return output;
 }
